@@ -1,4 +1,4 @@
-const server = express();
+const WebSocket = express();
 
 const port = new WebSocket.Server({ server });
 
