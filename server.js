@@ -1,5 +1,5 @@
 const WebSocket = express();
-const port = new WebSocket.server();
+const port = new SocketServer({ WebSocket });
 
 
 // const WebSocket = require('ws');
