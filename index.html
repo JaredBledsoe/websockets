@@ -9,9 +9,14 @@
   </style>
 </head>
 <body>
-
+<script>
+ var HOST = location.origin.replace(/^http/, 'ws')
+      var ws = new WebSocket(HOST);
+      ws.onmessage = function (event) {
+        console.log(event.data);
+      };</script>
   <canvas></canvas>
 
-<script src="client.js"></script>
+//<script src="client.js"></script>
 </body>
 </html>
