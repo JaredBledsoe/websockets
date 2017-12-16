@@ -10,9 +10,9 @@ var players = [];
 var keyStates = [];
 
 
-// socket.onopen = function() {
-// 	console.log("Socket Open");
-// }
+socket.onopen = function() {
+	console.log("Socket Open");
+}
 
 // // window.onbeforeunload = function () {
 // // 	socket.send(JSON.stringify({
