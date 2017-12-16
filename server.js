@@ -1,6 +1,5 @@
-const WebSocket = require('express');
-const z = express();
-const port = new WebSocket.Server(z);
+const WebSocket = express();
+const port = new WebSocket.server();
 
 
 // const WebSocket = require('ws');
