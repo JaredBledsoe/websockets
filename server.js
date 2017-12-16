@@ -1,4 +1,6 @@
 const express = require('express');
+const SocketServer = require('ws').Server;
+
 const WebSocket = express();
 const port = new SocketServer({ WebSocket });
 
