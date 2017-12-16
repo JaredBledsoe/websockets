@@ -42,12 +42,12 @@ wss.on('connection', function(ws) {
 
 	//Send new player array of current players
 	for (var i=0; i<players.length; i++) {
-		ws.send(JSON.stringify({
+		wss.send(JSON.stringify({
 			type: 'initPlayers',
 			info: players[i],
 		}));
 
-		ws.send(JSON.stringify({
+		wss.send(JSON.stringify({
 			type: 'receiveId',
 			id: players[players.length-1].id
 		}));
@@ -64,16 +64,16 @@ wss.on('connection', function(ws) {
 
 
 // //Run game physics
-// setInterval(function() {
-// 	for (var i=0; i<players.length; i++) {
-// 		players[i].update();
+setInterval(function() {
+	for (var i=0; i<players.length; i++) {
+		//players[i].update();
 
-// 		clients[i].send(JSON.stringify({
-// 			type: 'playersUpdate',
-// 			players: players
-// 		}));
-// 	}
-// },30);
+		clients[i].send(JSON.stringify({
+			type: 'playersUpdate',
+			players: players
+		}));
+	}
+},30);
 
 
 // function Player() {
