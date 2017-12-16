@@ -1,6 +1,6 @@
-const WebSocket = express();
-const port = new SocketServer({ WebSocket });
-
+// const WebSocket = express();
+// const port = new SocketServer({ WebSocket });
+console.log("hi");
 
 // const WebSocket = require('ws');
 // const port = new WebSocket.Server({ port: 1337 });
