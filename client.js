@@ -1,13 +1,13 @@
 var canvas = document.getElementsByTagName('canvas')[0];
 canvas.width = 400;
 canvas.height = 400;
-// var ctx = canvas.getContext('2d');
-// var HOST = location.origin.replace(/^http/, 'ws')
-// var socket = new WebSocket(HOST);
-// // var socket = new WebSocket('ws://localhost:1337');
-// var id;
-// var players = [];
-// var keyStates = [];
+var ctx = canvas.getContext('2d');
+var HOST = location.origin.replace(/^http/, 'ws')
+var socket = new WebSocket(HOST);
+// var socket = new WebSocket('ws://localhost:1337');
+var id;
+var players = [];
+var keyStates = [];
 
 
 // socket.onopen = function() {
