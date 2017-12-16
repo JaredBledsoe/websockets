@@ -63,57 +63,57 @@ wss.on('connection', function(ws) {
 });
 
 
-//Run game physics
-setInterval(function() {
-	for (var i=0; i<players.length; i++) {
-		players[i].update();
+// //Run game physics
+// setInterval(function() {
+// 	for (var i=0; i<players.length; i++) {
+// 		players[i].update();
 
-		clients[i].send(JSON.stringify({
-			type: 'playersUpdate',
-			players: players
-		}));
-	}
-},30);
+// 		clients[i].send(JSON.stringify({
+// 			type: 'playersUpdate',
+// 			players: players
+// 		}));
+// 	}
+// },30);
 
 
-function Player() {
-	this.x = 200;
-	this.velX = Math.random()*2;
-	this.y = 200;
-	this.velY = Math.random()*2;
-	this.id = clients.length-1;
-	this.moves = [false, false, false, false];
-	this.updated = false;
-};
+// function Player() {
+// 	this.x = 200;
+// 	this.velX = Math.random()*2;
+// 	this.y = 200;
+// 	this.velY = Math.random()*2;
+// 	this.id = clients.length-1;
+// 	this.moves = [false, false, false, false];
+// 	this.updated = false;
+// };
 
-Player.prototype.update = function() {
-	this.x += this.velX;
-	this.y += this.velY;
-	this.velX *= .97;
-	this.velY *= .97;
+// Player.prototype.update = function() {
+// 	this.x += this.velX;
+// 	this.y += this.velY;
+// 	this.velX *= .97;
+// 	this.velY *= .97;
 
-	//Movement
-	if (this.moves[0]) {
-		this.velY -= 1;
-	}
-	else if (this.moves[2]) {
-		this.velY += 1;
-	}
-	if (this.moves[1]) {
-		this.velX += 1;
-	}
-	else if (this.moves[3]) {
-		this.velX -= 1;
-	}
+// 	//Movement
+// 	if (this.moves[0]) {
+// 		this.velY -= 1;
+// 	}
+// 	else if (this.moves[2]) {
+// 		this.velY += 1;
+// 	}
+// 	if (this.moves[1]) {
+// 		this.velX += 1;
+// 	}
+// 	else if (this.moves[3]) {
+// 		this.velX -= 1;
+// 	}
 
-	//Collisions
-	if (this.x+20>400 || this.x-20<0) {
-		this.velX = -this.velX*1.1;
-	}
-	if (this.y+20>400 || this.y-20<0) {
-		this.velY = -this.velY*1.1;
-	}
-};
+// 	//Collisions
+// 	if (this.x+20>400 || this.x-20<0) {
+// 		this.velX = -this.velX*1.1;
+// 	}
+// 	if (this.y+20>400 || this.y-20<0) {
+// 		this.velY = -this.velY*1.1;
+// 	}
+// };
 
 
 
