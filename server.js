@@ -23,13 +23,18 @@
 // }, 1000);
 const express = require('express');
 const SocketServer = require('ws').Server;
+const path = require('path');
 
-const WebSocket = express();
+const PORT = process.env.PORT || 3000;
+const INDEX = path.join(__dirname, 'index.html');
+
+const WebSocket = express()
+  .use((req, res) => res.sendFile(INDEX) )
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
 const port = new SocketServer({ WebSocket });
 
 
-// const WebSocket = require('ws');
-// const port = new WebSocket.Server({ port: 1337 });
 var clients = [];
 var players = [];
 var updatedPlayers = [];
